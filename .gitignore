@@ -17,3 +17,5 @@ src/Makefile
 src/Makefile.in
 *.o
 src/game-test
+autom4te.cache/
+aclocal.m4
