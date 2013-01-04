@@ -28,7 +28,7 @@ using namespace std;
 
 int main(void) {
 	PrimaryUI* ui;
-	for (int i = 0; i < 150; i++)
+	for (int i = 0; i < 5; i++)
 	{
 	 ui = new PrimaryUI;
 	ui->spawn_ui();
