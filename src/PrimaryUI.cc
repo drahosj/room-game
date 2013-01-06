@@ -26,31 +26,31 @@
 #include <iostream>
 
 PrimaryUI::PrimaryUI() {
-	this->screen = NULL;
-	this->current_room = NULL;
+	screen = NULL;
+	current_room = NULL;
 
-	this->room_rect.h = Room::HEIGHT;
-	this->room_rect.w = Room::WIDTH;
-	this->room_rect.x = (PrimaryUI::WIDTH - Room::WIDTH) / 2;
-	this->room_rect.y = (PrimaryUI::HEIGHT - Room::HEIGHT) / 2;
+	room_rect.h = Room::HEIGHT;
+	room_rect.w = Room::WIDTH;
+	room_rect.x = (PrimaryUI::WIDTH - Room::WIDTH) / 2;
+	room_rect.y = (PrimaryUI::HEIGHT - Room::HEIGHT) / 2;
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 
-	this->current_room = new Room;
+	current_room = new Room;
 }
 
 PrimaryUI::~PrimaryUI() {
-	delete this->current_room;
-	SDL_FreeSurface(this->screen);
+	delete current_room;
+	SDL_FreeSurface(screen);
 	SDL_Quit();
 }
 
 void PrimaryUI::spawn_ui() {
-	this->screen = SDL_SetVideoMode(PrimaryUI::WIDTH, PrimaryUI::HEIGHT, 32, SDL_SWSURFACE);
-	this->render_ui();
+	screen = SDL_SetVideoMode(PrimaryUI::WIDTH, PrimaryUI::HEIGHT, 32, SDL_SWSURFACE);
+	render_ui();
 }
 
 void PrimaryUI::render_ui() {
-	SDL_BlitSurface(this->current_room->room_surface, NULL, this->screen, &this->room_rect);
-	SDL_Flip(this->screen);
+	SDL_BlitSurface(current_room->room_surface, NULL, screen, &room_rect);
+	SDL_Flip(screen);
 }

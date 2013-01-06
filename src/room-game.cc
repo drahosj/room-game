@@ -27,11 +27,14 @@
 using namespace std;
 
 int main(void) {
+	srand(time(NULL));
 	PrimaryUI* ui;
+
 	for (int i = 0; i < 5; i++)
 	{
 	 ui = new PrimaryUI;
 	ui->spawn_ui();
+	SDL_Delay(750);
 	delete ui;
 	}
 	cout << "Complete" << endl;

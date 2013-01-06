@@ -35,7 +35,17 @@ public:
 
 	static const int WIDTH = 352;
 	static const int HEIGHT = 256;
+	static const int DOOR_WIDTH = 16;
+	static const int DOOR_HEIGHT = 16;
+	static const unsigned char DOOR_NORTH = 	0b00001000;
+	static const unsigned char DOOR_EAST = 		0b00000100;
+	static const unsigned char DOOR_SOUTH = 	0b00000010;
+	static const unsigned char DOOR_WEST = 		0b00000001;
 
+	void generate_door_mask();
+	void generate_surface();
+
+	unsigned char door_mask;
 	SDL_Surface* room_surface;
 };
 

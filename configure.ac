@@ -1,10 +1,10 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_PREREQ(2.59)
-AC_INIT(room-game, 1.0)
+AC_PREREQ([2.69])
+AC_INIT([room-game],[1.0])
 
 
-AC_CANONICAL_SYSTEM
+AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE()
 
 AC_PROG_CXX
